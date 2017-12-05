@@ -1,0 +1,98 @@
+{% extends "mymovies/base.html" %}
+
+{% load static %}
+
+{% block page_title %}
+CinemaStation Questionnaire Page
+{% endblock page_title %}
+
+{% block page_title2 %}
+Cinema Station Questionnaire Page
+{% endblock page_title2 %}
+
+{% block pages %}
+	<div id="navigation">
+      <ul>
+        <li><a href="/homepage/">HOME</a></li>
+        <li><a class="active" href="/questionnairepage/">Questionnaire Page</a></li>
+        <li><a href="/allmovies/">All Movies</a></li>
+        <li><a href="/soundtracks/">Soundtracks</a></li>
+        <li><a href="/feedback/">Feedback</a></li>
+      </ul>
+	</div>
+{% endblock pages %}
+
+
+
+{% block categories %}
+{{ movies.title }}
+{% endblock categories %}
+
+
+
+
+
+
+{% block sentence %}
+<div class="head">
+<h1><font color="gold"><b>Tell me who you are , and I'll tell you your movie for tonight !!!</b></font></h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<form action="" method="post">
+{% csrf_token %}
+<h1><b>1-What type of movies do you prefer?</b></h1><br>
+  <input type="radio" name="gender" value="Action"> Action<br>
+  <input type="radio" name="gender" value="Comedy"> Comedy<br>
+  <input type="radio" name="gender" value="Romance"> Romance<br>
+  <input type="radio" name="gender" value="Drama"> Drama<br>
+  <p>&nbsp;</p>
+  <h1><b>2-What is your time range of movies?</b></h1><br>
+  <input type="radio" name="gender" value="before"> Before 2000<br>
+  <input type="radio" name="gender" value="after"> After 2000
+  <p>&nbsp;</p>
+  <h1><b>3-Who is ur super hero?</b></h1><br>
+  <input type="radio" name="movie_super_heroes" value="Batman"> Batman<br>
+  
+  <input type="radio" name="movie_super_heroes" value="Superman"> Superman<br>
+  
+  <input type="radio" name="movie_super_heroes" value="Spiderman" > Spiderman<br>
+
+  <input type="radio" name="movie_super_heroes" value="Ironman"> Ironman<br>
+
+  <input type="radio" name="movie_super_heroes" value="Thor"> Thor<br>
+
+  <input type="radio" name="movie_super_heroes" value="CaptainAmerica"> Captain America<br>
+
+  <input type="radio" name="movie_super_heroes" value="Hulk"> Hulk<br>
+
+  <input type="radio" name="movie_super_heroes" value="Wolverine"> Wolverine<br>
+
+  <p>&nbsp;</p>
+    <h1><b>4-What do you prefer at the main role?</b></h1><br>
+  <input type="radio" name="gender" value="male"> Males<br>
+  <input type="radio" name="gender" value="female"> Females
+  <p>&nbsp;</p>
+  <h1><b>5-If you were born again, at which era would you want to live?</b></h1><br>
+  <input type="radio" name="gender" value="future"> Future<br>
+  <input type="radio" name="gender" value="past"> 1980s
+  <p>&nbsp;</p>
+  <p>{{ x }}</p>
+   </div>
+   <div>
+    <center>
+	
+	
+	 
+	
+   <button type="submit">Submit</button>
+   </center>
+   </div>
+  
+</form>
+
+		
+{% endblock sentence %}
+
+
+{% block emptyblock%}
+{% endblock emptyblock%}

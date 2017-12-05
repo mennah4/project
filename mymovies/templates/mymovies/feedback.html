@@ -1,0 +1,56 @@
+{% extends 'mymovies/base.html' %}
+
+{% load static %}
+
+{% block page_title %}
+CinemaStation All Feedback
+{% endblock page_title %}
+
+{% block page_title2 %}
+Cinema Station Feedback Page
+{% endblock page_title2 %}
+
+{% block pages %}
+	<div id="navigation">
+      <ul>
+        <li><a href="/homepage/">HOME</a></li>
+        <li><a href="/questionnairepage/">Questionnaire Page</a></li>
+        <li><a href="/allmovies/">All Movies</a></li>
+        <li><a href="/soundtracks/">Soundtracks</a></li>
+        <li><a class="active" href="/feedback/">Feedback</a></li>
+      </ul>
+	</div>
+{% endblock pages %}
+
+{% block sentence %}
+{% endblock sentence %}
+
+
+
+
+
+{% block feedback %}
+<h3>Add your comment</h3>
+<form method="post" action="#comment">
+  {% csrf_token %}
+  Title: <input type="text" value="{{values.title}}" name="title"> <br/>
+  {% if errors.title %}
+  <p style="color: red">{{errors.title}}</p>
+  {% endif %}
+  Body : <textarea name="yorum">{{values.body}}</textarea> <br/>
+  {% if errors.body %}
+  <p style="color: red">{{errors.body}}</p>
+  {% endif %}
+
+  <button type="submit">Submit</button>
+
+</form>
+{% endblock feedback%}
+
+
+{% block empty2 %}
+{% endblock empty2 %}
+
+
+{% block emptyblock%}
+{% endblock emptyblock%}

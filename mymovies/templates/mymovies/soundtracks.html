@@ -1,0 +1,54 @@
+{% extends "mymovies/base.html" %}
+
+{% load static %}
+
+
+{% block page_title %}
+CinemaStation All Movies {{ movies.movie_title }}
+{% endblock page_title %}
+
+
+
+{% block pages %}
+	<div id="navigation">
+      <ul>
+        <li><a href="/homepage/">HOME</a></li>
+        <li><a href="/questionnairepage/">Questionnaire Page</a></li>
+        <li><a href="/allmovies/">All Movies</a></li>
+        <li><a class="active" href="/soundtracks/">Soundtracks</a></li>
+        <li><a href="/feedback/">Feedback</a></li>
+      </ul>
+	</div>
+{% endblock pages %}
+
+
+{% block categories %}
+{{ movies.title }}
+{% endblock categories %}
+
+<h1>Soundtracks</h1>
+{% block tracks %}  
+		<div>
+        <tr>
+         <td height="50" align="center"><br/><a href="{{a.movie_tracks}}"><b><font size="10">{{a.movie_title}}</font></b></td>
+        </tr>
+		</div>
+{% endblock tracks %}
+
+
+{% block page_title3 %}
+	<div id="search">
+        <form action="#" method="get" accept-charset="utf-8">
+          <label for="search-field">SEARCH</label>
+          <input type="text" name="search field" value="Enter search here" id="search-field" class="blink search-field"  />
+          <input type="submit" value="GO!" class="search-button" />
+        </form>
+	</div>
+{% endblock page_title3 %}
+
+{% block seeall %}
+          <h2> &nbsp</h2>
+          <p class="text-right"><a href="#"></a></p>
+{% endblock seeall %}
+
+

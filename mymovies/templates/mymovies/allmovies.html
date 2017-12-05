@@ -1,0 +1,74 @@
+{% extends "mymovies/base.html" %}
+
+{% load static %}
+
+
+{% block page_title %}
+CinemaStation All Movies
+{% endblock page_title %}
+
+
+
+{% block pages %}
+	<div id="navigation">
+      <ul>
+        <li><a href="/homepage/">HOME</a></li>
+        <li><a href="/questionnairepage/">Questionnaire Page</a></li>
+        <li><a class="active" href="/allmovies/">All Movies</a></li>
+        <li><a href="/soundtracks/">Soundtracks</a></li>
+        <li><a href="/feedback/">Feedback</a></li>
+      </ul>
+	</div>
+{% endblock pages %}
+
+
+{% block categories %}
+{{ movies.title }}
+{% endblock categories %}
+
+
+
+
+
+{% block content %}
+
+		
+          <div class="movie-image"> <span class="play"><span class="name">{{q.movie_title}}</span></span> <a href=/movie/{{q.id}}><img src="/media/{{ q.movie_image }}" alt="..." /></a> </div>
+          <div class="rating">
+            <center><h2>{{q.movie_title}}</h2></center>
+
+            </div>
+			
+
+{% endblock content %}
+
+
+
+
+
+
+{% block page_title3 %}
+	<div id="search">
+        <form action="#" method="get" accept-charset="utf-8">
+          <label for="search-field">SEARCH</label>
+          <input type="text" name="search field" value="Enter search here" id="search-field" class="blink search-field"  />
+          <input type="submit" value="GO!" class="search-button" />
+        </form>
+	</div>
+{% endblock page_title3 %}
+
+{% block seeall %}
+          <h2>&nbsp </h2>
+		  
+          <p class="text-right"><a href="#"></a></p>
+{% endblock seeall %}
+
+{% block emptyblock%}
+{% endblock emptyblock%}
+
+{% for contact in contacts %}
+    {# Each "contact" is a Contact model object. #}
+    {{ contact.full_name|upper }}<br />
+    ...
+{% endfor %}
+

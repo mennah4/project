@@ -1,0 +1,55 @@
+{% extends "mymovies/base.html" %}
+
+{% load static %}
+
+{% block page_title %}
+CinemaStation Homepage
+{% endblock page_title %}
+
+
+{% block page_title2 %}
+Cinema Station Homepage {{ movies.movie_title }}
+{% endblock page_title2 %}
+
+{% block pages %}
+	<div id="navigation">
+      <ul>
+        <li><a class="active" href="/homepage/">HOME</a></li>
+        <li><a href="/questionnairepage/">Questionnaire Page</a></li>
+        <li><a href="/allmovies/">All Movies</a></li>
+        <li><a href="/soundtracks/">Soundtracks</a></li>
+        <li><a href="/feedback/">Feedback</a></li>
+      </ul>
+	</div>
+{% endblock pages %}
+
+
+
+{% block categories %}
+{{ movies.title }}
+{% endblock categories %}
+
+
+{% block sentence %}
+<div class="head">
+		<center>
+        <h3>When you might suspect the first look love, There indeed exsist falling for the cinema from the first movie !</h3>
+		</center>
+      </div>
+      <div class="content">
+        
+        <p> &nbsp;</p>
+        <p>&quot;Movies touch our hearts,and awaken our vision, and </p>
+		<p>change the way we see things. They take us to other places.</p>
+		<p> They open doors and minds. Movies are the memories of our</p>
+		<p> lifetime. We need to keep them alive.&quot; </p>
+		<p> &nbsp;</p>
+		<h4 align="right">&quot;Martin Scorsese&quot;</h4>
+    
+
+		</div>
+{% endblock sentence %}
+
+
+{% block emptyblock%}
+{% endblock emptyblock%}
